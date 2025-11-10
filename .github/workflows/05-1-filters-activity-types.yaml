@@ -1,0 +1,13 @@
+name: 05- 01 filter
+on:
+  pull_request:
+   type: [opened,synchronize]
+   branch:
+   - main
+
+jobs:
+ echo:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Printing
+    run: echo "Running whenever a PR is opened or synchronized AND base branch is main"
