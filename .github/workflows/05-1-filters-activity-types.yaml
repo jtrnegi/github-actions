@@ -1,7 +1,9 @@
 name: 05- 01 filter
 on:
   pull_request:
-   type: [opened,synchronize]
+   types: 
+   - opened
+   - synchronize
    branch:
    - main
 
