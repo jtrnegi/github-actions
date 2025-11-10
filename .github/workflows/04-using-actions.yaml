@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
-      uses: action/checkout@v5
+      uses: actions/checkout@v5
     - name: Printing Folder
       run: tree
 
