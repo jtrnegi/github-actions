@@ -4,6 +4,10 @@ on:
  push:
  workflow_dispatch:
 
+env:
+ env1: foo
+ env2: bar
+
 jobs:
  echo-data:
    runs-on: ubuntu-latest
@@ -11,7 +15,14 @@ jobs:
    - name: Display Information
      run: |
       echo "Event name is ${{ github.event_name }}"
+      echo "env1 value is $env1"
+      echo "env2 value is $env2"
    - name: reterive Variable
+     env:
+      env1: bar
+      env2: foo
      run: |
       echo "variable value is ${{ vars.MY_VAR }}"
+      echo "env1 value is $env1"
+      echo "env2 value is $env2"
       
