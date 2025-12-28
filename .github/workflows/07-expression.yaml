@@ -14,7 +14,7 @@ jobs:
     - name: startup data
       if: ${{ inputs.debug }}
       run: |
-        echo "event triggered from ${{ github.event }}"
+        echo "event triggered from ${{ github.event_name }}"
         echo "Branch is ${{ github.ref }}"
         echo "sha is ${{ github.sha }}"
         echo "Runner os is ${{ runner.os }}"
