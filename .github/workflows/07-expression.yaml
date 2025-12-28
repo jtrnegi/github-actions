@@ -9,15 +9,15 @@ on:
 
 jobs:
   echo:
-  runs-on: ubuntu-latest
-  steps:
-  - name: startup data
-    if: ${{ inputs.debug }}
-    run: |
-      echo "event triggered from ${{ github.event }}"
-      echo "Branch is ${{ github.ref }}"
-      echo "sha is ${{ github.sha }}"
-      echo "Runner os is ${{ runner.os }}"
-  - name: startup main
-    if: ${{ inputs.debug && github.ref == 'refs/heads/main' }}
-    run: echo "hello world from main"
+    runs-on: ubuntu-latest
+    steps:
+    - name: startup data
+      if: ${{ inputs.debug }}
+      run: |
+        echo "event triggered from ${{ github.event }}"
+        echo "Branch is ${{ github.ref }}"
+        echo "sha is ${{ github.sha }}"
+        echo "Runner os is ${{ runner.os }}"
+    - name: startup main
+      if: ${{ inputs.debug && github.ref == 'refs/heads/main' }}
+      run: echo "hello world from main"
