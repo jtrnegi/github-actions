@@ -19,11 +19,11 @@ jobs:
      STEP_VAR: "I am step var"
      step_vars: "I am another var"
     run: |
-     echo "step env var is $env.STEP_VAR"
-     echo "step env var 2 is $env.step_vars"
-     echo "job env var is $env.JOB_VAR"
-     echo "workflow env var is $env.WORKFLOW_VAR"
-     echo "overwritten env var is $env.OVERWRITTEN"
+     echo "step env var is $STEP_VAR"
+     echo "step env var 2 is $step_vars"
+     echo "job env var is $JOB_VAR"
+     echo "workflow env var is $WORKFLOW_VAR"
+     echo "overwritten env var is $OVERWRITTEN"
   - name: Overwrite Job Variable
     run: |
      echo "step env var $OVERWRITTEN"
