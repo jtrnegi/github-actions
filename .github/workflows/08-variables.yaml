@@ -4,32 +4,20 @@ on:
  workflow_dispatch:
 
 env:
- WORKFLOW_VAR:
-  type: string
-  default: "I am workflow env"
- OVERWRITTEN: 
-  type: string
-  deafult: "I will be overwritten"
+ WORKFLOW_VAR: "I am workflow env"
+ OVERWRITTEN: "I will be overwritten"
 
 jobs:
  echo:
   runs-on: ubuntu-latest
   env:
-   JOB_VAR:
-    type: string
-    default: "I am job var"
-   OVERWRITTEN:
-    type: string
-    default: "job has overwritten"
+   JOB_VAR: "I am job var"
+   OVERWRITTEN: "job has overwritten"
   steps:
   - name: Print ENV variables
     env:
-     STEP_VAR:
-      type: string
-      default: "I am step var"
-     step_vars:
-      type: string
-      default: "I am another var"
+     STEP_VAR: "I am step var"
+     step_vars: "I am another var"
     run: |
      echo "step env var is $env.STEP_VAR"
      echo "step env var 2 is $env.step_vars"
