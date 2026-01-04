@@ -23,13 +23,13 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   - name: build
-    run: "echo Building from tag ${{ input.tag }}"
+    run: "echo Building from tag ${{ inputs.tag }}"
  
  deploy: 
   runs-on: ubuntu-latest
   needs: [build]
-  environment: ${{ input.environment }}
-  if: {{ !input.dry-run }}
+  environment: ${{ inputs.environment }}
+  if: {{ !inputs.dry-run }}
   steps:
   - name: deploy
     run: "echo deploying to ${{ input.tag }}"
