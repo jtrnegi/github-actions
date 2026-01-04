@@ -32,4 +32,4 @@ jobs:
   if: ${{ !inputs.dry-run }}
   steps:
   - name: deploy
-    run: "echo deploying to ${{ input.tag }}"
+    run: "echo deploying to ${{ inputs.tag }}"
